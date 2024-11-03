@@ -3,15 +3,15 @@ import path from 'path';
 import dotenv from 'dotenv/config'
 
 const app = express();
+const assetPath = path.join('./public');
 const DOTENV = process.env;
-
 
 app.set('view engine', 'ejs');
 app.set('views', path.join('views'));
 
 
 app.use(express.urlencoded({extended:true}));
-
+app.use(express.static(assetPath));
 
 const messages = [
     {
@@ -37,8 +37,16 @@ const links = [
     }
 ]
 
+const footerLink = [
+    {
+        link: 'https://github.com/Beppe94',
+        text: 'Github Logo',
+        src: 'githublogo.png'
+    }
+]
+
 app.get('/', (req, res) => {
-    res.render('messages', {messages:messages, links:links});
+    res.render('messages', {messages:messages, links:links, footerLink:footerLink});
 })
 
 app.get('/new', (req, res) => {
