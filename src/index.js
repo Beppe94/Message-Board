@@ -50,12 +50,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/new', (req, res) => {
-    res.render('form');
+    res.render('form', {links:links});
 })
 
 app.post('/new', (req, res) => {
     const content = req.body;
-    messages.push({text: content.message, user: content.user, time: new Date().toDateString()})
+    if(!content.message == ' ' && !content.user == ' ') {
+        messages.push({text: content.message, user: content.user, time: new Date().toDateString()})
+    } else {
+        return
+    }
+
     res.redirect('/');
 })
 
