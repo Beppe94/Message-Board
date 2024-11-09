@@ -1,12 +1,17 @@
 *,
 *::after,
 *::before {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-size: 22px;
+    scroll-behavior: smooth;
 }
 
 body {
+    overflow: visible;
+    width: 100dvw;
+    height: 100dvh;
     color: #edf2f4;
     background-color: #001d3d;
 }
@@ -36,6 +41,7 @@ li {
 .messagesWrap {
     padding: 1rem;
     width: 100dvw;
+    overflow: hidden;
 }
 
 .title {
@@ -51,9 +57,11 @@ li {
     gap: .7rem;
 }
 
-.cardWrap{
+.cardWrap {
     display: flex;
     justify-content: center;
+    height: 550px;
+    overflow-y: scroll;
 }
 
 .messageCard {
@@ -78,6 +86,21 @@ li {
 .content p{
     padding: .5rem;
     font-size: 28px;
+}
+
+.footerWrap {
+    position: absolute;
+    bottom: 0;
+    width: 100dvw;
+    padding: .4rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .footer img {
