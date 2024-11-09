@@ -1,18 +1,30 @@
-<div class="formWrap">
-    <div>
-        <h1>New Message</h1>
-    </div>
-    <div>
-        <form method="post" action="/new">
-            <span>
-                <h2>Name</h2>   
-                <input name="user" type="text" placeholder="John">
-            </span>
-            <span>
-                <h2>Message</h2>
-                <input name="message" type="text"  placeholder="Hello everyone!">
-            </span>
-            <button>Add</button>
-        </form>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Message</title>
+    <link rel="stylesheet" href="formStyle.css">
+</head>
+    <body>
+        <%-include('nav', {links:links})%>
+        <div class="formWrap">
+            <div>
+                <h1>New Message</h1>
+            </div>
+            <div class="form">
+                <form method="post" action="/new">
+                    <span>
+                        <h2>Name</h2>   
+                        <input name="user" type="text" placeholder="John">
+                    </span>
+                    <span>
+                        <h2>Message</h2>
+                        <input name="message" type="text"  placeholder="Hello everyone!">
+                    </span>
+                    <button>Add</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

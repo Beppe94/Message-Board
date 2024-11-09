@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 26px;
+    scroll-behavior: smooth;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+    color: #edf2f4;
+    background-color: #001d3d;
+}
+
+.nav {
+    position: absolute;
+    top: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100dvw;
+}
+
+.links ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+a {
+    color: #edf2f4;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+.formWrap {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.form form input {
+    border-radius: 5px;
+    outline: none;
+    background: #edf2f4;
+    padding: .1rem;
+}
+
+.form form button {
+    width: 120px;
+}
+
+.errorText {
+    position: absolute;
+    display: none;
+}

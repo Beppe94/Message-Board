@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+
 *,
 *::after,
 *::before {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-size: 22px;
+    font-size: 24px;
     scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body {
@@ -86,6 +93,10 @@ li {
 .content p{
     padding: .5rem;
     font-size: 28px;
+}
+
+.formWrap {
+    background-color: #001d3d;
 }
 
 .footerWrap {
