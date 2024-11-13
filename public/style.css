@@ -46,39 +46,44 @@ li {
 }
 
 .messagesWrap {
+    height: 100%;
     padding: 1rem;
     width: 100dvw;
-    overflow: hidden;
+    height: fit-content;
 }
 
 .title {
     display: flex;
-    justify-self: center;
+    justify-content: center;
     align-content: center;
+    padding: .5rem;
 }
 
 .contentWrap {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    border-radius: 10px;
+    padding: .3rem;
+    display: inline-block;
     gap: .7rem;
+    box-shadow: 0 0 20px 8px black;
+    height: 500px;
+    overflow-y: scroll;
+    padding-bottom: 1rem;
 }
 
 .cardWrap {
     display: flex;
     justify-content: center;
-    height: 550px;
-    overflow-y: scroll;
+    padding: 1rem;
 }
 
 .messageCard {
     width: 50dvw;
-    padding: 1rem 1rem .3rem 0;
+    padding: .5rem .5rem .1rem 0;
     border-bottom: 2px solid #fefefe;
 }
 
 .userTime {
-    padding: .5rem;
+    padding: .2rem;
 }
 
 .userTime h1 {
@@ -91,7 +96,7 @@ li {
 }
 
 .content p{
-    padding: .5rem;
+    padding: .2rem;
     font-size: 28px;
 }
 
