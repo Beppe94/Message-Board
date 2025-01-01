@@ -14,23 +14,7 @@
         </div>
         <div class="cardWrap">
             <div class="contentWrap">
-                <%for(let i = 0; i < messages.length; i++) { %> 
-                <div class="messageCard">
-                    <div class="userTime">
-                        <h1>
-                            <%=messages[i].user%> <br>
-                        </h1>
-                        <p>
-                            <%=messages[i].time%>
-                        </p>
-                    </div>
-                    <div class="content">
-                        <p>
-                            <%=messages[i].text%>
-                        </p>
-                    </div>
-                </div>
-                <%}%>
+                <%messages%>
             </div>
         </div>
     </div>

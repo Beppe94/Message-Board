@@ -1,17 +1,17 @@
 import express from 'express';
 import path from 'path';
-import dotenv from 'dotenv/config'
+import dotenv from 'dotenv/config';
+import router from '../Routes/router.js';
 
 const app = express();
 const assetPath = path.join('./public');
-const DOTENV = process.env;
+const ENV = process.env;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join('views'));
-
-
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(assetPath));
+app.use(express.json());
 
 const messages = [
     {
@@ -26,33 +26,10 @@ const messages = [
     },
 ]
 
-const links = [
-    {
-        link: '/',
-        text: 'Home'
-    },
-    {
-        link: '/new',
-        text: 'New Message'
-    }
-]
+app.use("/", router);
 
-const footerLink = [
-    {
-        link: 'https://github.com/Beppe94',
-        text: 'Github Logo',
-        src: 'githublogo.png'
-    }
-]
 
-app.get('/', (req, res) => {
-    res.render('messages', {messages:messages, links:links, footerLink:footerLink});
-})
-
-app.get('/new', (req, res) => {
-    res.render('form', {links:links});
-})
-
+/*
 app.post('/new', (req, res) => {
     const content = req.body;
     if(!content.message == ' ' && !content.user == ' ') {
@@ -63,17 +40,8 @@ app.post('/new', (req, res) => {
 
     res.redirect('/');
 })
+*/
 
-
-
-
-
-
-
-
-
-
-
-app.listen((DOTENV.PORT), () => {
-    console.log(`App listening on port: ${DOTENV.PORT}`);
+app.listen((ENV.PORT), () => {
+    console.log(`App listening on port: ${ENV.PORT}`);
 })
