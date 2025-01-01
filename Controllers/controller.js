@@ -30,11 +30,31 @@ export async function getList(req, res) {
     })
 }
 
-export async function newMessage(req, res) {
-    const { data } = req.body;
-    console.log(data);
+export async function getMessageForm(req, res) {
     
     res.render("form", {
-        links: links
+        links: links,
+        errors: ''
     })
+}
+
+export async function addMessage(req, res) {
+    const { user, message } = req.body;
+
+    if(!user || user.trim().length == 0) {
+        res.status(500).render("form", {
+            links: links,
+            errors: "Invalid Name"
+        })
+    } else if (!message  || message.trim().length == 0) {
+        res.status(500).render("form", {
+            links: links,
+            errors: "Invalid Message"
+        })
+    } else {
+        await insertMessageInDB({user, message});
+        res.redirect("/");
+    }
+
+    
 }

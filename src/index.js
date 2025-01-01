@@ -9,22 +9,9 @@ const ENV = process.env;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join('views'));
-app.use(express.urlencoded({extended:true}));
-app.use(express.static(assetPath));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-
-const messages = [
-    {
-        text: 'Hello there!',
-        user: 'John',
-        time: new Date().toDateString(),
-    },
-    {
-        text: 'Hi!!',
-        user: 'Ken',
-        time: new Date().toDateString(),
-    },
-]
+app.use(express.static(assetPath));
 
 app.use("/", router);
 
