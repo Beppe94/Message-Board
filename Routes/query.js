@@ -6,8 +6,8 @@ export async function getMessagesFromDB() {
 }
 
 export async function insertMessageInDB(data) {
-    const { user, message } = data;
+    const { user, message, date } = data;
 
-    await client.query(`INSERT INTO Messages (users, message) VALUES ($1, $2)`, [user, message]);
+    await client.query(`INSERT INTO Messages (username, message, date) VALUES ($1, $2, $3)`, [user, message, date]);
 }
 

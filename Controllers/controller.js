@@ -21,6 +21,11 @@ const footerLink = [
 
 export async function getList(req, res) {
     const listDB = await getMessagesFromDB();
+
+    listDB.forEach((data) => {
+        data.date = data.date.toISOString().split('T')[0];
+    })
+    
     console.log(listDB);
     
     res.render("messages", {
@@ -40,6 +45,7 @@ export async function getMessageForm(req, res) {
 
 export async function addMessage(req, res) {
     const { user, message } = req.body;
+    const date = new Date().toISOString().split('T')[0];    
 
     if(!user || user.trim().length == 0) {
         res.status(500).render("form", {
@@ -52,9 +58,7 @@ export async function addMessage(req, res) {
             errors: "Invalid Message"
         })
     } else {
-        await insertMessageInDB({user, message});
+        await insertMessageInDB({user, message, date});
         res.redirect("/");
     }
-
-    
 }

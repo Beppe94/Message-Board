@@ -20,7 +20,7 @@ body {
     width: 100dvw;
     height: 100dvh;
     color: #edf2f4;
-    background-color: #001d3d;
+    background-color: #288bcecb;
 }
 
 .nav {
@@ -28,6 +28,10 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.nav h1 {
+    font-size: 42px;
 }
 
 .links ul {
@@ -46,58 +50,67 @@ li {
 }
 
 .messagesWrap {
-    height: 100%;
-    padding: 1rem;
-    width: 100dvw;
-    height: fit-content;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    flex: wrap;
 }
 
 .title {
     display: flex;
     justify-content: center;
     align-content: center;
-    padding: .5rem;
+    text-shadow: -8px 8px 5px black;
+}
+
+.title h1 {
+    font-size: 64px;
 }
 
 .contentWrap {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: rgb(180, 142, 37);
+    width: calc(100%  - 2rem);
+    max-width: 600px;
     border-radius: 10px;
     padding: .3rem;
     display: inline-block;
-    gap: .7rem;
     box-shadow: 0 0 20px 8px black;
-    height: 500px;
+    height: 550px;
     overflow-y: scroll;
     padding-bottom: 1rem;
+    align-content: center;
 }
 
-.cardWrap {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
+.contentWrap::-webkit-scrollbar {
+    display: none;
 }
 
-.messageCard {
-    width: 50dvw;
-    padding: .5rem .5rem .1rem 0;
+.username p {
+    font-size: 32px;
+}
+
+.card {
+    justify-self: center;
+    width: 95%;
     border-bottom: 2px solid #fefefe;
 }
 
-.userTime {
-    padding: .2rem;
+.date p {
+    font-size: 20px;
 }
 
-.userTime h1 {
-    text-shadow: 0 0 15px #fefefe;
-    font-size: 34px;
-}
-
-.userTime p {
-    font-size: 16px;
-}
-
-.content p{
-    padding: .2rem;
+.message p {
     font-size: 28px;
+}
+
+.inlineGap {
+    display: flex;
+    gap: 10px;
 }
 
 .formWrap {
@@ -105,8 +118,6 @@ li {
 }
 
 .footerWrap {
-    position: absolute;
-    bottom: 0;
     width: 100dvw;
     padding: .4rem;
 }
@@ -116,11 +127,27 @@ li {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    flex-wrap: wrap;
 }
 
 .footer img {
     width: 48px;
     object-fit: fill;
     filter: invert();
+}
+
+@media (max-width: 330px) {
+    .nav {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav h1 {
+        font-size: 38px;
+    }
+    .links ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }

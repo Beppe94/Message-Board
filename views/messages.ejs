@@ -12,23 +12,24 @@
         <div class="title">
             <h1>Messages</h1>
         </div>
-        <div class="cardWrap">
-            <div class="contentWrap">
-                <%if(messages && messages.length > 0) { %>
-                    <div>
-                        <%messages.forEach((message) => { %>
-                            <div>
-                                <h1><%=message.users%></h1>
-                                <p><%=message.data%></p>
-                            </div>
-                            <div>
-                                <h2>Message</h2>
-                                <p><%=message.message%></p>
-                            </div>
-                        <%})%>
+        <div class="contentWrap">
+            <%if(messages && messages.length > 0) { %>
+                <%messages.forEach((data) => { %>
+                    <div class="card">
+                        <div class="content">
+                            <span class="username inlineGap">
+                                <p>User: <%=data.username%></p>
+                            </span>
+                            <span class="date inlineGap">
+                                <p>Date: <%=data.date%></p>
+                            </span>
+                        </div>
+                        <div class="message inlineGap"> 
+                            <p>Message: <%=data.message%> </p>
+                        </div>
                     </div>
-                <%}%>
-            </div>
+                <%})%>
+            <%}%>
         </div>
     </div>
     <div class="footerWrap">
