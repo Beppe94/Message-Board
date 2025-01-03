@@ -26,8 +26,6 @@ export async function getList(req, res) {
         data.date = data.date.toISOString().split('T')[0];
     })
     
-    console.log(listDB);
-    
     res.render("messages", {
         messages: listDB,
         links: links,

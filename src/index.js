@@ -15,20 +15,6 @@ app.use(express.static(assetPath));
 
 app.use("/", router);
 
-
-/*
-app.post('/new', (req, res) => {
-    const content = req.body;
-    if(!content.message == ' ' && !content.user == ' ') {
-        messages.push({text: content.message, user: content.user, time: new Date().toDateString()})
-    } else {
-        return
-    }
-
-    res.redirect('/');
-})
-*/
-
 app.listen((ENV.PORT), () => {
     console.log(`App listening on port: ${ENV.PORT}`);
 })
